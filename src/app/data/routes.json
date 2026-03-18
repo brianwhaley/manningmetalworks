@@ -1,0 +1,304 @@
+{
+	"siteInfo": {
+		"name": "Manningmetalworks",
+		"author": "Manningmetalworks",
+		"description": "Manningmetalworks - Modern Web Development Template",
+		"keywords": "Manningmetalworks, web development template, modern web development",
+		"url": "https://www.manningmetalworks.com",
+		"email": "manningmetalworks@gmail.com",
+		"favicon": "/favicon.ico",
+		"favicon_sizes": "64x64 32x32 24x24 16x16",
+		"favicon_type": "image/x-icon",
+		"theme_color": "#ffffff",
+		"background_color": "#ffffff",
+		"default_locale": "en",
+		"display": "standalone",
+		"image": "/images/pix-bg-512.gif",
+		"image_height": "512",
+		"image_width": "512",
+		"telephone": "+1-973-710-8008",
+		"address": {
+			"streetAddress": "10 Jade Circle",
+			"addressLocality": "Denville",
+			"addressRegion": "NJ",
+			"postalCode": "07834",
+			"addressCountry": "US"
+		},
+		"priceRange": "$",
+		"sameAs": [
+			"https://www.manningmetalworks.com"
+		]
+	},
+	"routes": [
+		{
+			"name": "Home",
+			"path": "/",
+			"title": "Manningmetalworks - Home",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "About",
+			"path": "/about",
+			"title": "Manningmetalworks - About",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "FAQs",
+			"path": "/faqs",
+			"title": "Manningmetalworks - FAQs",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Projects",
+			"path": "/projects",
+			"title": "Manningmetalworks - Projects",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Contact",
+			"path": "/contact",
+			"title": "Manningmetalworks - Contact",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Style Guide",
+			"hidden": true,
+			"path": "/styleguide",
+			"title": "Manningmetalworks - Style Guide",
+			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
+			"keywords": [
+				"Manningmetalworks",
+				"style guide"
+			]
+		},
+		{
+			"name": "Humans Txt",
+			"hidden": true,
+			"path": "/humans.txt",
+			"title": "Manningmetalworks - Humans Txt",
+			"description": "A Humans-Only page describing the people who worked on this website. ",
+			"keywords": [
+				"Manningmetalworks",
+				"humans txt"
+			]
+		},
+		{
+			"name": "Security Txt",
+			"hidden": true,
+			"path": "/security.txt",
+			"title": "Manningmetalworks - Security Txt",
+			"description": "Security contact and vulnerability disclosure information.",
+			"keywords": [
+				"Manningmetalworks",
+				"security txt",
+				"security"
+			]
+		},
+		{
+			"name": "About Us",
+			"path": "/about-us",
+			"title": "Manningmetalworks - about us",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Blog",
+			"path": "/blog",
+			"title": "Manningmetalworks - blog",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Blogcalendar",
+			"path": "/blogcalendar",
+			"title": "Manningmetalworks - blogcalendar",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Contact Us",
+			"path": "/contact-us",
+			"title": "Manningmetalworks - contact us",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Gallery",
+			"path": "/gallery",
+			"title": "Manningmetalworks - gallery",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Services",
+			"path": "/services",
+			"title": "Manningmetalworks - services",
+			"description": "",
+			"keywords": ""
+		},
+		{
+			"name": "Style Guide",
+			"path": "/style-guide",
+			"title": "Manningmetalworks - style guide",
+			"description": "",
+			"keywords": ""
+		}
+	],
+	"visualdesign": {
+		"primary-color": {
+			"value": "#369",
+			"type": "color",
+			"group": "palette",
+			"label": "Primary color"
+		},
+		"secondary-color": {
+			"value": "#BCD",
+			"type": "color",
+			"group": "palette",
+			"label": "Secondary color"
+		},
+		"accent1-color": {
+			"value": "#CCC",
+			"type": "color",
+			"group": "palette",
+			"label": "Accent color 1"
+		},
+		"accent2-color": {
+			"value": "#EEE",
+			"type": "color",
+			"group": "palette",
+			"label": "Accent color 2"
+		},
+		"bg-color": {
+			"value": "#ffffff",
+			"type": "color",
+			"group": "palette",
+			"label": "Background color"
+		},
+		"text-color": {
+			"value": "#000000",
+			"type": "color",
+			"group": "palette",
+			"label": "Font color"
+		},
+		"header-font": {
+			"value": "\"Montserrat\", Verdana, sans-serif",
+			"type": "font",
+			"group": "typography",
+			"label": "Header font"
+		},
+		"body-font": {
+			"value": "\"Roboto\", Arial, sans-serif",
+			"type": "font",
+			"group": "typography",
+			"label": "Body font"
+		},
+		"font-size1-min": {
+			"value": "2.00rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 1 min"
+		},
+		"font-size1-max": {
+			"value": "3.00rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 1 max"
+		},
+		"font-size2-min": {
+			"value": "1.35rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 2 min"
+		},
+		"font-size2-max": {
+			"value": "1.75rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 2 max"
+		},
+		"font-size3-min": {
+			"value": "1.17rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 3 min"
+		},
+		"font-size3-max": {
+			"value": "1.35rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 3 max"
+		},
+		"font-size4-min": {
+			"value": "1.00rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 4 min"
+		},
+		"font-size4-max": {
+			"value": "1.25rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 4 max"
+		},
+		"font-size5-min": {
+			"value": "0.83rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 5 min"
+		},
+		"font-size5-max": {
+			"value": "1.00rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 5 max"
+		},
+		"font-size6-min": {
+			"value": "0.67rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 6 min"
+		},
+		"font-size6-max": {
+			"value": "0.85rem",
+			"type": "size",
+			"group": "typography",
+			"label": "Font size 6 max"
+		},
+		"font-min-screen": {
+			"value": "375px",
+			"type": "size",
+			"group": "typography",
+			"label": "Font min screen"
+		},
+		"font-max-screen": {
+			"value": "1440px",
+			"type": "size",
+			"group": "typography",
+			"label": "Font max screen"
+		},
+		"border-radius": {
+			"value": "0.5rem",
+			"type": "size",
+			"group": "layout",
+			"label": "Border radius"
+		},
+		"box-shadow": {
+			"value": "0 2px 4px rgba(0,0,0,0.1)",
+			"type": "shadow",
+			"group": "layout",
+			"label": "Box shadow"
+		},
+		"transition": {
+			"value": "all 0.3s ease",
+			"type": "transition",
+			"group": "layout",
+			"label": "Transition"
+		}
+	}
+}
