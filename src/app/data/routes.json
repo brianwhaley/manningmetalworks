@@ -1,9 +1,9 @@
 {
 	"siteInfo": {
-		"name": "Manningmetalworks",
-		"author": "Manningmetalworks",
-		"description": "Manningmetalworks - Modern Web Development Template",
-		"keywords": "Manningmetalworks, web development template, modern web development",
+		"name": "Manning Metalworks",
+		"author": "Manning Metalworks",
+		"description": "Manning Metalworks - Modern Web Development Template",
+		"keywords": "Manning Metalworks, web development template, modern web development",
 		"url": "https://www.manningmetalworks.com",
 		"email": "manningmetalworks@gmail.com",
 		"favicon": "/favicon.ico",
@@ -26,127 +26,124 @@
 		},
 		"priceRange": "$",
 		"sameAs": [
-			"https://www.manningmetalworks.com"
+			"https://www.Manning Metalworks.com"
 		]
 	},
 	"routes": [
 		{
 			"name": "Home",
 			"path": "/",
-			"title": "Manningmetalworks - Home",
+			"title": "Manning Metalworks - Home",
 			"description": "",
 			"keywords": ""
-		},
-		{
-			"name": "About",
-			"path": "/about",
-			"title": "Manningmetalworks - About",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "FAQs",
-			"path": "/faqs",
-			"title": "Manningmetalworks - FAQs",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Projects",
-			"path": "/projects",
-			"title": "Manningmetalworks - Projects",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Contact",
-			"path": "/contact",
-			"title": "Manningmetalworks - Contact",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Style Guide",
-			"hidden": true,
-			"path": "/styleguide",
-			"title": "Manningmetalworks - Style Guide",
-			"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
-			"keywords": [
-				"Manningmetalworks",
-				"style guide"
-			]
-		},
-		{
-			"name": "Humans Txt",
-			"hidden": true,
-			"path": "/humans.txt",
-			"title": "Manningmetalworks - Humans Txt",
-			"description": "A Humans-Only page describing the people who worked on this website. ",
-			"keywords": [
-				"Manningmetalworks",
-				"humans txt"
-			]
-		},
-		{
-			"name": "Security Txt",
-			"hidden": true,
-			"path": "/security.txt",
-			"title": "Manningmetalworks - Security Txt",
-			"description": "Security contact and vulnerability disclosure information.",
-			"keywords": [
-				"Manningmetalworks",
-				"security txt",
-				"security"
-			]
-		},
-		{
+		},{
 			"name": "About Us",
 			"path": "/about-us",
-			"title": "Manningmetalworks - about us",
+			"title": "Manning Metalworks - About Us",
 			"description": "",
 			"keywords": ""
-		},
-		{
-			"name": "Blog",
-			"path": "/blog",
-			"title": "Manningmetalworks - blog",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Blogcalendar",
-			"path": "/blogcalendar",
-			"title": "Manningmetalworks - blogcalendar",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Contact Us",
-			"path": "/contact-us",
-			"title": "Manningmetalworks - contact us",
-			"description": "",
-			"keywords": ""
-		},
-		{
-			"name": "Gallery",
-			"path": "/gallery",
-			"title": "Manningmetalworks - gallery",
-			"description": "",
-			"keywords": ""
-		},
-		{
+		},{
 			"name": "Services",
 			"path": "/services",
-			"title": "Manningmetalworks - services",
+			"title": "Manning Metalworks - Services",
 			"description": "",
 			"keywords": ""
-		},
-		{
-			"name": "Style Guide",
-			"path": "/style-guide",
-			"title": "Manningmetalworks - style guide",
+		},{
+			"name": "Gallery",
+			"path": "/gallery",
+			"title": "Manning Metalworks - Gallery",
 			"description": "",
 			"keywords": ""
+		},{
+			"name": "FAQs",
+			"path": "/faqs",
+			"title": "Manning Metalworks - FAQs",
+			"description": "",
+			"keywords": ""
+		},{
+			"name": "Blog",
+			"path": "/blog",
+			"title": "Manning Metalworks - Blog",
+			"description": "",
+			"keywords": ""
+		},{
+			"name": "Contact Us",
+			"path": "/contact-us",
+			"title": "Manning Metalworks - Contact Us",
+			"description": "",
+			"keywords": ""
+		} , {
+			"name": "Admin",
+			"hidden": true,
+			"routes": [ 
+				{ 
+					"name": "404", 
+					"path": "/404", 
+					"hidden": true,
+					"title": "Manning Metalworks - Page Not Found",
+					"description": "The page you are looking for could not be found.",
+					"keywords": ["Manning Metalworks", "404", "page not found"]  
+				} , { 
+					"name": "Sitemap", 
+					"path": "/sitemap.xml", 
+					"hidden": true,
+					"title": "Manning Metalworks - Sitemap",
+					"description": "Manning Metalworks sitemap.xml",
+					"keywords": ["Manning Metalworks", "sitemap.xml"]  
+				} , {
+					"name" : "Robots.txt",
+					"path" : "/robots.txt",
+					"hidden": true,
+					"title": "Manning Metalworks - Robots.txt",
+					"description": "Manning Metalworks robots.txt",
+					"keywords": ["Manning Metalworks", "robots.txt"]
+				} , {
+					"name": "Web Manifest",
+					"path": "/manifest.webmanifest",
+					"hidden": true,
+					"title": "Manning Metalworks - Web Manifest",
+					"description": "Manning Metalworks web manifest",
+					"keywords": ["Manning Metalworks", "manifest.webmanifest"]
+				} , { 
+					"name": "Humans Txt", 
+					"path": "/humans.txt", 
+					"hidden": true,
+					"title": "Manning Metalworks - Humans Txt",
+					"description": "Humans Txt",
+					"keywords": ["Manning Metalworks", "humans txt"] 
+				} , {
+					"name": "Security Txt",
+					"hidden": true,
+					"path": "/security.txt",
+					"title": "Manning Metalworks - Security Txt",
+					"description": "Security contact and vulnerability disclosure information.",
+					"keywords": ["Manning Metalworks","security txt","security"]
+				} , {
+					"name": "Style Guide",
+					"hidden": true,
+					"path": "/styleguide",
+					"title": "Manning Metalworks - Style Guide",
+					"description": "A full style guide for this website, including color pallete, fonts, and information architecture. ",
+					"keywords": [
+						"Manning Metalworks",
+						"style guide"
+					]
+				} , {
+					"name": "Blog Calendar",
+					"hidden": true,
+					"path": "/blogcalendar",
+					"title": "Manning Metalworks - Blog Calendar",
+					"description": "",
+					"keywords": ""
+				} , {
+					"name": "Updates",
+					"hidden": true,
+					"path": "/updates",
+					"title": "Manning Metalworks - Updates",
+					"description": "",
+					"keywords": ""
+				}
+			]
 		}
 	],
 	"visualdesign": {

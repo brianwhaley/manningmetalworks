@@ -7,7 +7,7 @@ export default function ServicesPage() {
 	return (
 		<>
 
-			<PageTitleHeader title="Manningmetalworks Services" />
+			<PageTitleHeader title="Manning Metalworks Services" />
 
 			<PageSection columns={1} maxWidth="1024px" padding="20px" id="service-section">
 				<Callout

@@ -1,7 +1,7 @@
  
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
 import { PageTitleHeader, PageSection, PageSectionHeader } from "@pixelated-tech/components";
 import { FormEngine } from "@pixelated-tech/components";
 import { emailFormData } from "@pixelated-tech/components";
@@ -14,14 +14,14 @@ export default function ContactUsPage() {
 
 	const myContent = <div className="centered"><br /><br />Thank you for contacting us!<br />We will get back to you as soon as we can.<br /><br /><br /></div>;
 
-	const [modalContent /*, setModalContent */ ] = useState<React.ReactNode>(myContent);
+	const [modalContent /*, setModalContent */ ] = useState<NonNullable<React.ReactNode>>(myContent);
 	
-	function handleSubmit(e: FormEvent<HTMLFormElement>) {
+	function handleSubmit(e: Event) {
 		ToggleLoading({show: true});
-		emailFormData(e as unknown as Event, postSubmit);
+		emailFormData(e, postSubmit);
 	}
 
-	function postSubmit(e: FormEvent<HTMLFormElement>) {
+	function postSubmit(e: Event) {
 		handleModalOpen(e as MouseEvent);
 		ToggleLoading({show: false});
 		const myForm = e.target as HTMLFormElement;
@@ -33,7 +33,7 @@ export default function ContactUsPage() {
 			<Loading />
 			<Modal modalContent={modalContent} />
 
-			<PageTitleHeader title="Contact Manningmetalworks" />
+			<PageTitleHeader title="Contact Manning Metalworks" />
 
 			<PageSection columns={1} maxWidth="1024px" padding="20px" id="schedule-quote-section">
 				<PageSectionHeader title="Schedule a Quote" />

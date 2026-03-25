@@ -16,7 +16,7 @@ export default function Header() {
 				<SmartImage
 					id="logo"
 					src="/images/placeholder.png"
-					alt="Manningmetalworks Logo"
+					alt="Manning Metalworks Logo"
 					width={120}
 					height={120}
 				/>

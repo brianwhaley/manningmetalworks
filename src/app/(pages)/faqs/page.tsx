@@ -6,6 +6,10 @@ import { SchemaFAQ } from '@pixelated-tech/components';
 import faqsData from '@/app/data/faqs.json';
 
 export default function FaqsPage() {
+	const faqItems = {
+		...faqsData,
+		mainEntity: faqsData.mainEntity.map((faq) => ({ ...faq, category: "" }))
+	};
 	return (
 		<>
 			<SchemaFAQ faqsData={faqsData} />
@@ -13,7 +17,6 @@ export default function FaqsPage() {
 			<PageSection columns={1} maxWidth="1024px" id="header-section">
 				<PageTitleHeader
 					title="Frequently Asked Questions"
-					subtitle="Find answers to common questions about our web design and development services"
 				/>
 				<p>These frequently asked questions (FAQs) provide answers to common inquiries about 
 					our services and offerings. If you have any additional questions, feel free to 
@@ -21,7 +24,7 @@ export default function FaqsPage() {
 			</PageSection>
 							
 			<PageSection columns={1} maxWidth="1024px" id="faqs-section">
-				<FAQAccordion faqsData={faqsData} />
+				<FAQAccordion faqsData={faqItems} />
 			</PageSection>
 		</>
 	);
