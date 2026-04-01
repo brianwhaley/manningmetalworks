@@ -9,7 +9,8 @@ import { SchemaBlogPosting } from "@pixelated-tech/components";
 import { mapWordPressToBlogPosting } from "@pixelated-tech/components";
 import { ToggleLoading } from '@pixelated-tech/components';
 
-const wpSite = "blog.oaktree-landscaping.com";
+// const wpSite = "blog.manningmetalworks.com";
+const wpSite = "manningmetalworks.wpcomstaging.com";
 
 export default function BlogPage() {
 
@@ -29,7 +30,7 @@ export default function BlogPage() {
 
 	useEffect(() => {
 		MicroInteractions({ 
-			scrollfadeElements: '.tile , .blog-post-summary',
+			scrollfadeElements: '.tile , .blog-post-summary, .scrollFadeElement',
 		});
 	}, []); 
 
@@ -38,7 +39,7 @@ export default function BlogPage() {
 			{ blogSchemas.map((schema, index) => (
 				<SchemaBlogPosting key={index} post={schema} />
 			)) }
-			<PageTitleHeader title="Oaktree Landscaping Blog Posts" />
+			<PageTitleHeader title="Manning Metalworks Blog Posts" />
 			<PageSection columns={1} maxWidth="1024px" id="blog-section">
 				<BlogPostList site={wpSite} posts={wpPosts} showCategories={false} />
 			</PageSection>

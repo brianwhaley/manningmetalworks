@@ -1,8 +1,8 @@
 {
-	"name": "pixelated-template",
-	"version": "0.1.15",
+	"name": "manningmetalworks",
+	"version": "0.1.16",
 	"private": false,
-	"description": "Pixelated starter template for Next.js, Typescript, and common configs",
+	"description": "Manning Metalworks - A custom metal fabrication company specializing in high-quality craftsmanship and personalized service.",
 	"scripts": {
 		"dev": "npm run clean && NODE_OPTIONS='--inspect' next dev  -p 3010 --experimental-https",
 		"build": "npm run clean && NODE_ENV=production next build",
@@ -18,15 +18,15 @@
 		"update": "bash node_modules/@pixelated-tech/components/dist/scripts/update.sh"
 	},
 	"dependencies": {
-		"@pixelated-tech/components": "^3.14.0",
+		"@pixelated-tech/components": "^3.14.2",
 		"html-entities": "^2.6.0",
 		"md5": "^2.3.0",
-		"next": "^16.2.1",
+		"next": "^16.2.2",
 		"prop-types": "^15.8.1",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4",
 		"sass": "^1.98.0",
-		"typescript-eslint": "^8.57.2"
+		"typescript-eslint": "^8.58.0"
 	},
 	"devDependencies": {
 		"@types/md5": "^2.3.6",
@@ -35,7 +35,7 @@
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.0.6",
 		"eslint": "9.39.4",
-		"eslint-config-next": "^16.2.1",
+		"eslint-config-next": "^16.2.2",
 		"eslint-import-resolver-typescript": "^4.4.4",
 		"typescript": "^6.0.2"
 	},

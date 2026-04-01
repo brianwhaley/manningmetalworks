@@ -1,102 +1,123 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { PageTitleHeader, PageSection, PageGridItem, PageSectionHeader } from "@pixelated-tech/components";
-import { GravatarCard } from '@pixelated-tech/components';
-import { getGravatarProfile, type GravatarProfile } from '@pixelated-tech/components';
+import React, { useState, useEffect } from "react";
+import { PageTitleHeader, PageSection, PageSectionHeader } from "@pixelated-tech/components";
 import { Carousel } from "@pixelated-tech/components";
+import { Callout } from "@pixelated-tech/components";
+import { ReviewSchema } from "@pixelated-tech/components";
+import { getGoogleReviewsByPlaceId } from "@pixelated-tech/components";
+import { usePixelatedConfig } from "@pixelated-tech/components";
 
 export default function AboutUsPage() {
-	const email1 = "brian@pixelated.tech"; 
-
-	const [ profile1, setProfile1 ] = useState<GravatarProfile | null>(null);
+	const config = usePixelatedConfig();
+	const [carouselCards, setCarouselCards] = useState<any[]>([]);
+	const [reviewSchemas, setReviewSchemas] = useState<any[]>([]);
 
 	useEffect(() => {
-		if (email1) {
-			getGravatarProfile(email1).then((data) => {
-				setProfile1(data);
-			});
-		}
-	}, [ email1 ]); 
+		const fetchReviews = async () => {
+			try {
+				const result = await getGoogleReviewsByPlaceId({
+					placeId: config?.googlePlaces?.placeId || "",
+					proxyBase: config?.global?.proxyUrl || "",
+					apiKey: config?.googlePlaces?.apiKey || "",
+					maxReviews: 100,
+				});
 
-	const mycards = [
-		{
-			headerText: "Awesome Job",
-			subHeaderText: "\"We recently hired this company to work for us, and their service exceeded our expectations!  I would highly recommend them to anyone looking for quality company with great customer service.\"",
-			bodyText: " - David Chen",
-			index: 0, cardIndex: 0, cardLength: 3, image: "",
-		} , {
-			headerText: "Top-Notch Service",
-			subHeaderText: "\"As someone who knows this industry, I can confidently say this company stands out for their professionalism and dedication. They followed through all the way to the end of the project and beyond to make sure i was satisfied.\"",
-			bodyText: " - Sarah Jenkins",
-			index: 1, cardIndex: 1, cardLength: 3, image: "",
-		} , {
-			headerText: "Reliable, Detail-Oriented & Friendly",
-			subHeaderText: "\"If you don't hire this company, you're already making a big mistake on your project.  Be sure to call them out, meet with you, and discuss how they can solve all your problems.  Their work is like magic!\"",
-			bodyText: " - Michael O'Connell",
-			index: 2, cardIndex: 2, cardLength: 3, image: "",
-		}];
+				// Transform reviews to carousel cards
+				const cards = result.reviews.map((review, index) => ({
+					headerText: `${review.rating}/5 Stars`,
+					subHeaderText: review.text || "",
+					bodyText: `- ${review.author_name}`,
+					index: index,
+					cardIndex: index,
+					cardLength: result.reviews.length,
+					image: review.profile_photo_url || "",
+				}));
+				setCarouselCards(cards);
+
+				// Generate ReviewSchema from same data
+				const schemas = result.reviews.map((review) => ({
+					"@context": "https://schema.org/",
+					"@type": "Review",
+					"reviewRating": {
+						"@type": "Rating",
+						"ratingValue": review.rating.toString(),
+					},
+					"author": {
+						"@type": "Person",
+						"name": review.author_name,
+					},
+					"reviewBody": review.text || "",
+					"itemReviewed": {
+						"@type": "LocalBusiness",
+						"name": "Manning Metalworks",
+					},
+				}));
+
+				setReviewSchemas(schemas);
+			} catch (error) {
+				console.error("Error fetching reviews:", error);
+			}
+		};
+
+		if (config?.googleMaps?.apiKey) {
+			fetchReviews();
+		}
+	}, [config?.googleMaps?.apiKey]);
 
     
 	return (
 		<>
 
 			<PageTitleHeader title="About Manning Metalworks" />
-
-			<PageSection columns={1} maxWidth="1024px" padding="20px" id="team-section">
-
-				<PageSectionHeader title="Our Team" />
-
-				<PageGridItem >
-					<GravatarCard 
-						profile={profile1}
-						layout="horizontal"
-						avatarSize={300}
-
-					/>
-				</PageGridItem>
-
-			</PageSection>
-
+`
 			<PageSection columns={1} maxWidth="1024px" padding="20px" id="history-section">
 				
 				<PageSectionHeader title="Our History" />
-
-				<p>In the heart of the South Carolina Lowcountry, Manning Metalworks began 
-					its journey with little more than an idea and a dedication 
-					to quality. Founded in 1492, the company built 
-					its reputation one project at a time. They focused on mastering the unique 
-					challenges of the Lowcountry, offering personalized services 
-					that transformed things that were not-so-good into things tat are spectacular.
-					Their hands-on approach and commitment to individual 
-					satisfaction quickly fostered a loyal clientele, establishing 
-					a strong foundation rooted in trust and meticulous attention to detail.</p>
-				
-				<p>As their reputation flourished through word-of-mouth, Manning Metalworks 
-					strategically expanded its operations to meet the demands of the areas 
-					booming growth. The small, family-owned business gradually 
-					scaled up moving to more complex projects.  
-					Yet, despite taking on bigger challenges, 
-					the company remained true to its founding principles of reliability 
-					and aesthetic excellence, adapting its bespoke service model to 
-					suit its expanding clientele.</p>
-				
-				<p>At Manning Metalworks, the philosophy remains simple: every project 
-					is a testament to the art of superior service. The goal is 
-					to exceed expectations not just through the beauty of the finished work, 
-					but through exceptional service and a profound respect for the 
-					region. We are dedicated to delivering unparalleled 
-					quality using sustainable practices that enhance the community 
-					of the Lowcountry, ensuring that every project we take on — whether 
-					a small fix or a major undertaking — flourishes in harmony 
-					with the community it serves. The commitment is unwavering: 
-					creating lasting beauty, one project at a time.</p>
-
+					<div>
+						<p>
+							The foundation of Manning Metalworks was built on a commitment to the finer details of the metalworking craft. Our founder, Tim Manning, honed his skills while working for some of the most respected names in the industry. During his earlier years, Tim focused on the high-end complexities of ornamental fabrication, learning that the difference between a good weld and a great one lies in the precision of the preparation and the artistry of the finish. Tim also spent significant time at some highly reputed local forges, where he developed a reputation for reliability and technical proficiency—a relationship of mutual respect that continues to thrive today.
+						</p>
+						<p>
+							In a recent and exciting chapter of our story, the company transitioned into a proud son-and-father-owned business when Tim's father, Greg Manning, officially joined the team. Greg brings a unique and disciplined perspective to the shop; after a long and successful career as a firefighter for the FDNY, he transitioned his passion and unwavering focus on safety into the metalworks trade. After completing his professional welding certification, Greg now applies the same life-saving attention to detail required in the fire service to every structural joint and custom project we produce.
+						</p>
+						<p>
+							Today, Manning Metalworks operates out of the Morris Plains area, providing expert residential, commercial, and municipal services to clients throughout Morris County. Our history is one of continuous learning and deep local roots, allowing us to approach every job with the sophisticated skill of a large-scale firm and the personal accountability of a family business. Whether we are working on a municipal infrastructure project or a custom residential gate, we carry the lessons of our past into every spark we strike, ensuring that the Manning name remains synonymous with quality and integrity.
+						</p>
+					</div>
 			</PageSection>
 
-			<PageSection columns={1} maxWidth="1024px" padding="20px" id="feedback-section">
-				<PageSectionHeader title="Testimonials" />
-				<Carousel cards={mycards} />
+
+			<PageSection columns={1} maxWidth="1024px" padding="20px" id="bio-section">
+				<PageSectionHeader title="Meet the Team" />
+				<Callout
+					variant="boxed grid"
+					gridColumns={{left:1, right:3}}
+					layout="horizontal"
+					direction="left"
+					img="/images/mm/manning-welding.jpg"
+					title="Tim Manning | Founder & Lead Fabricator"
+					subtitle="With a career forged in some of the most prestigious ornamental and structural shops in the industry, Tim brings an artisan's eye and an engineer's precision to every project."
+					content="Tim Manning established Manning Metalworks on the principle that high-end craftsmanship should be accessible to residential, commercial, and municipal clients alike. His professional journey includes years of experience at La Forge De Style, where he mastered the intricate details of elite-level ornamental ironwork and fine-scale fabrication. Tim also spent significant time at White Iron LLC, where he honed his skills in heavy-duty structural welding and developed the robust industry relationships he maintains today. Now leading the shop in Morris Plains, Tim oversees every project to ensure it meets his uncompromising standards for structural integrity and aesthetic finish."
+				/>
+				<Callout
+					variant="boxed grid"
+					gridColumns={{left:1, right:3}}
+					layout="horizontal"
+					direction="left"
+					img="/images/mm/manning-repair.jpg"
+					title="Greg Manning | Partner & Certified Welder"
+					subtitle="Bringing a lifelong commitment to precision and care from the fire department, Greg transitioned into the family business to provide a unique, detail-oriented approach to metalwork."
+					content="Greg Manning represents the 'father' in our son-and-father-owned partnership, joining the firm after a distinguished career as a firefighter with the FDNY. This background in the fire service instilled in Greg a deep-seated discipline and a 'measure twice, cut once' mentality that is rare in the construction trades. After completing his formal welding certification, Greg stepped into the shop to merge his attention to detail with the technical demands of modern fabrication. His presence ensures that Manning Metalworks operates with a level of organization and safety that reflects his decades of professional service, providing our clients with peace of mind and reliable results."
+				/>
+			</PageSection>
+
+			<PageSection columns={1} maxWidth="768px" padding="20px" id="reviews-section">
+				<PageSectionHeader title="Customer Reviews" />
+				{reviewSchemas.map((review, idx) => (
+					<ReviewSchema key={idx} review={review} />
+				))}
+				{carouselCards.length > 0 && <Carousel cards={carouselCards} />}
 			</PageSection>
 
 		</>

@@ -6,7 +6,7 @@
 				"type" : "hidden",
 				"id" : "from",
 				"name" : "from",
-				"value" : "__EMAIL_ADDRESS__"
+				"value" : "manningmetalworks@gmail.com"
 			}
 		},{
 			"component" : "FormInput",
@@ -14,7 +14,15 @@
 				"type" : "hidden",
 				"id" : "to",
 				"name" : "to",
-				"value" : "__EMAIL_ADDRESS__"
+				"value" : "manningmetalworks@gmail.com"
+			}
+		},{
+			"component" : "FormInput",
+			"props" : {
+				"type" : "hidden",
+				"id" : "domain",
+				"name" : "domain",
+				"value" : "manningmetalworks.com"
 			}
 		},{
 			"component" : "FormInput",
@@ -22,7 +30,7 @@
 				"type" : "hidden",
 				"id" : "subject",
 				"name" : "subject",
-				"value" : "__SITE_NAME__ Contact Us Submit"
+				"value" : "Manning Metalworks Contact Us Submit"
 			}
 		},{
 			"component" : "FormInput",

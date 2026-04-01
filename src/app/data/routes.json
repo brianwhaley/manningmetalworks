@@ -2,8 +2,8 @@
 	"siteInfo": {
 		"name": "Manning Metalworks",
 		"author": "Manning Metalworks",
-		"description": "Manning Metalworks - Modern Web Development Template",
-		"keywords": "Manning Metalworks, web development template, modern web development",
+		"description": "Manning Metalworks - Custom metal fabrication and welding services in Denville, NJ. We specialize in custom metal work for residential and commercial clients, including railings, gates, furniture, and more.",
+		"keywords": "Manning Metalworks, custom metal fabrication, welding services, Denville NJ, railings, gates, furniture",
 		"url": "https://www.manningmetalworks.com",
 		"email": "manningmetalworks@gmail.com",
 		"favicon": "/favicon.ico",
@@ -13,20 +13,44 @@
 		"background_color": "#ffffff",
 		"default_locale": "en",
 		"display": "standalone",
-		"image": "/images/pix-bg-512.gif",
+		"image": "/images/logo/mm-logo-white-bg.webp",
 		"image_height": "512",
 		"image_width": "512",
-		"telephone": "+1-973-710-8008",
+		"telephone": "+1-973-906-0441",
 		"address": {
-			"streetAddress": "10 Jade Circle",
-			"addressLocality": "Denville",
+			"streetAddress": "24 West Hanover Avenue",
+			"addressLocality": "Morris Plains",
 			"addressRegion": "NJ",
-			"postalCode": "07834",
+			"postalCode": "07950",
 			"addressCountry": "US"
 		},
 		"priceRange": "$",
+		"services": [
+			{
+				"name": "Precision Metal Fabrication",
+				"description": "Manning Metalworks provides premier residential, commercial, and municipal metal fabrication across the region. We specialize in the complete project lifecycle, from CAD-assisted design and CNC plasma cutting to high-standard AWS certified assembly.",
+				"url": "https://www.manningmetalworks.com/services",
+				"areaServed": ["Morris County, New Jersey"]
+			},
+			{
+				"name": "Expert Repairs and Custom Fabrication",
+				"description": "We offer bespoke metal solutions and restoration services that off-the-shelf products simply cannot provide. Our technicians utilize MIG, TIG, and Stick welding processes to deliver high-strength repairs for everything from heavy machinery to antique ironwork.",
+				"url": "https://www.manningmetalworks.com/services",
+				"areaServed": ["Morris County, New Jersey"]
+			},
+			{
+				"name": "24/7 Mobile Welding Services",
+				"description": "Our 24/7 mobile welding division serves as a rapid-response unit, bringing a 'shop on wheels' directly to your location. We provide immediate, industrial-grade support for emergency structural failures and machinery repairs at any hour of the day or night.",
+				"url": "https://www.manningmetalworks.com/services",
+				"areaServed": ["Morris County, New Jersey"]
+			}
+		],
 		"sameAs": [
-			"https://www.Manning Metalworks.com"
+			"https://www.manningmetalworks.com",
+			"https://www.facebook.com/p/Manning-Metalworks-LLC-61572722814701/",
+			"https://www.instagram.com/manning.metalworks/",
+			"https://www.linkedin.com/in/tim-manning-89736430a/",
+			"https://www.linkedin.com/in/gregory-manning-62a75428/"
 		]
 	},
 	"routes": [

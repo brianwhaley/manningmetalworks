@@ -7,8 +7,10 @@ import { FormEngine } from "@pixelated-tech/components";
 import { emailFormData } from "@pixelated-tech/components";
 import { Loading, ToggleLoading } from "@pixelated-tech/components";
 import { Modal, handleModalOpen } from "@pixelated-tech/components";
-import { Calendly } from "@pixelated-tech/components";
 import formData from "@/app/data/contactform.json";
+import routes from "@/app/data/routes.json";
+const siteInfo = (routes as any).siteInfo;
+
 
 export default function ContactUsPage() {
 
@@ -35,14 +37,19 @@ export default function ContactUsPage() {
 
 			<PageTitleHeader title="Contact Manning Metalworks" />
 
-			<PageSection columns={1} maxWidth="1024px" padding="20px" id="schedule-quote-section">
-				<PageSectionHeader title="Schedule a Quote" />
-				<div suppressHydrationWarning={true}>
-					<Calendly 
-						url="" 
-						width="320px" 
-						height="800px" 
-					></Calendly>
+			<PageSection columns={1} maxWidth="1024px" padding="20px" id="contact-info-section">
+				<PageSectionHeader title="Contact Information" />
+				<div style={{ margin: '0 auto' }}>
+					<h3>Address:</h3>
+					<p>
+						<a href={`https://maps.app.goo.gl/${siteInfo.address.mapLink}`} target="_blank" rel="noopener noreferrer">
+							{siteInfo.address.streetAddress}, {siteInfo.address.addressLocality}, {siteInfo.address.addressRegion} {siteInfo.address.postalCode}
+						</a>
+					</p>
+					<h3>Email:</h3>
+					<p><a href={`mailto:${siteInfo.email}`}>{siteInfo.email}</a></p>
+					<h3>Phone:</h3>
+					<p><a href={`tel:${siteInfo.telephone}`}>{siteInfo.telephone}</a></p>
 				</div>
 			</PageSection>
 
@@ -55,18 +62,6 @@ export default function ContactUsPage() {
 						formData={formData as any} 
 						onSubmitHandler={handleSubmit} 
 					/>
-				</div>
-			</PageSection>
-
-			<PageSection columns={1} maxWidth="1024px" padding="20px" id="contact-info-section">
-				<PageSectionHeader title="Contact Information" />
-				<div style={{ margin: '0 auto' }}>
-					<h3>Address:</h3>
-					<p><a href="https://maps.app.goo.gl/2bD1zr43i5CmkfAk7" target="_blank" rel="noopener noreferrer">26504 Whyte Hardee Boulevard, Hardeeville, South Carolina 29927</a></p>
-					<h3>Email:</h3>
-					<p><a href="mailto:manningmetalworks@gmail.com">manningmetalworks@gmail.com</a></p>
-					<h3>Phone:</h3>
-					<p><a href="tel:(908) 867-5309">(908) 867-5309</a></p>
 				</div>
 			</PageSection>
 
