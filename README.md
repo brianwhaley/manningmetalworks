@@ -1,4 +1,4 @@
-# Pixelated Template
+# Pixelated Template 
 
 A modern, production-ready starter template for building responsive web applications with Next.js 16, TypeScript, and the Pixelated Components library. Perfect for small businesses, agencies, and developers looking to quickly launch professional websites.
 
